@@ -3,6 +3,8 @@ import HomePage from '../components/HomePage';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import QuizPage from '../components/QuizPage';
+import Analytics from '../components/Analytics';
+import Profile from '../components/Profile';
 
 
 
@@ -16,6 +18,14 @@ const router = createBrowserRouter(
   {
     path: '/quiz',
     element: <QuizPage />,
+  },
+  {
+    path: '/Analytics',
+    element: <Analytics />,
+  }, 
+  {
+  path: '/Profile',
+  element: <Profile />,
   }
 ]
 )
