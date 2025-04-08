@@ -20,7 +20,7 @@ export default function PortalExample() {
 
       <div className="flex items-center justify-center h-50 bg-[oklch(0.141_0.005_285.823)]">
         <div className="flex items-center justify-center bg-black-100 p-3 rounded-lg hover:text-blue-500">
-          <h2 className="w-38 py-2 px-2 border-double text-xl text-white border-5 rounded-lg border-blue-500">Take ACE Quiz</h2>
+          <h2 className="w-42 py-2 px-2 border-double text-xl text-white border-5 rounded-lg border-blue-500">Take ACE Quiz</h2>
         </div>
       </div>
       
