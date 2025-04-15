@@ -11,8 +11,6 @@
 
     const pool = mysql.createPool({
         ...clientOptions,
-        user: 'root',
-        password: 'Javascript1997!',
         database: 'gcp_testzilla_db'
     }).promise();
 
@@ -20,6 +18,25 @@
         const [rows] = await pool.query('SELECT * FROM questions');
         return rows;
     }
+
+     export async function getReducedData(quantity){
+        const [rows] = await pool.query('SELECT * FROM questions LIMIT ?' , [parseInt(quantity)]);
+        return rows;
+        }
+
+
+        export async function getRandomData(randomized){
+            try {
+                const [rows] = await pool.query(
+                  `SELECT * FROM questions ORDER BY RAND() LIMIT ?`,
+                  [parseInt(randomized)]
+                );
+                return rows;
+              } catch (error) {
+                console.error("Error fetching random data:", error);
+                throw error; // It's good practice to re-throw the error or handle it appropriately
+              }
+        }
 
      export async function getQuestions(contains){
         const [rows] =  await pool.query('SELECT * FROM questions WHERE questions LIKE ?', [contains]);
